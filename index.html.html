@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karma Items — Духовные Артефакты со Всего Мира</title>
+<meta name="description" content="Откройте для себя подлинные тибетские артефакты, несущие в себе мудрость веков. Наша коллекция поможет создать стабильность, изобилие и позитивные перемены в вашей жизни.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0b08;
+    --surface: #141210;
+    --surface2: #1c1916;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --gold-dim: #7a6030;
+    --cream: #f0e6d0;
+    --cream-dim: #b5a98a;
+    --red: #c0392b;
+    --text: #e8dcc8;
+    --text-muted: #8a7d68;
+    --border: rgba(201,168,76,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--gold);
+    color: #0d0b08;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  nav a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav a:hover { color: var(--gold); }
+
+  .header-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .header-icons a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .header-icons a:hover { color: var(--gold); }
+
+  .cart-btn {
+    background: var(--gold);
+    color: #0d0b08 !important;
+    padding: 8px 18px;
+    font-size: 11px !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.3s !important;
+  }
+
+  .cart-btn:hover { background: var(--gold-light) !important; color: #0d0b08 !important; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 85vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d0b08 0%, #1a1408 50%, #0d0b08 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='1'%3E%3Cpath d='M30 0l5 10H25L30 0zm0 60l5-10H25L30 60zM0 30l10-5v10L0 30zm60 0l-10-5v10L60 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  .hero-sale-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    margin-bottom: 30px;
+    animation: fadeUp 1.2s ease 0.2s both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 86px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    animation: fadeUp 1.2s ease 0.3s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 40px;
+    animation: fadeUp 1.2s ease 0.4s both;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: #0d0b08;
+    padding: 16px 48px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    animation: fadeUp 1.2s ease 0.5s both;
+  }
+
+  .hero-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 2px;
+  }
+
+  .view-all {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gold-dim);
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .view-all:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+  /* ── PRODUCT GRID ── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.4s, border-color 0.3s;
+    cursor: pointer;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-dim);
+  }
+
+  .product-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    background: var(--surface2);
+    transition: transform 0.6s;
+  }
+
+  .product-card:hover .product-img { transform: scale(1.04); }
+
+  .product-img-wrap { overflow: hidden; position: relative; }
+
+  .sale-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--red);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+
+  .product-info {
+    padding: 18px 20px 22px;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price-sale {
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .price-original {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-decoration: line-through;
+  }
+
+  .price-regular {
+    color: var(--cream);
+    font-size: 15px;
+  }
+
+  /* ── COLLECTIONS ── */
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .collection-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 32px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--cream-dim);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collection-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .collection-card:hover {
+    color: var(--gold);
+    border-color: var(--gold-dim);
+  }
+
+  .collection-card:hover::before { transform: scaleX(1); }
+
+  .collection-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold-dim);
+    font-size: 24px;
+    letter-spacing: 8px;
+    padding: 20px 0;
+    opacity: 0.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-desc {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li { margin-bottom: 12px; }
+
+  .footer-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-contact {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .footer-contact a { color: var(--gold); text-decoration: none; }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .payment-icons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .payment-icon {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 10px;
+    padding: 4px 8px;
+    letter-spacing: 1px;
+  }
+
+  /* ── SUBSCRIBE ── */
+  .subscribe-section {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    text-align: center;
+    padding: 64px 40px;
+    margin: 0 40px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .subscribe-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .subscribe-section p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 0;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .subscribe-form input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--gold-dim);
+    border-right: none;
+    color: var(--cream);
+    padding: 14px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    outline: none;
+  }
+
+  .subscribe-form input::placeholder { color: var(--text-muted); }
+
+  .subscribe-form button {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: #0d0b08;
+    padding: 14px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .subscribe-form button:hover { background: var(--gold-light); }
+
+  @media (max-width: 1100px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .collections-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 768px) {
+    .header-inner { padding: 0 20px; }
+    nav { display: none; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .collections-grid { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 48px 20px; }
+    .footer-inner { grid-template-columns: 1fr; padding: 40px 20px; }
+    .footer-bottom { flex-direction: column; gap: 16px; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">Распродажа ко Дню Матери — Купи один браслет и получи второй за 50%</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">Karma Items</a>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Бестселлеры</a>
+      <a href="#">Малы</a>
+      <a href="#">Браслеты</a>
+      <a href="#">Подвески</a>
+      <a href="#">Артефакты</a>
+      <a href="#">Отслеживание заказа</a>
+    </nav>
+    <div class="header-icons">
+      <a href="#">Войти</a>
+      <a href="#">Поиск</a>
+      <a href="#" class="cart-btn">Корзина (0)</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-sale-badge">🌸 Распродажа ко Дню Матери</div>
+    <h1>Купи Один Браслет —<br>Получи Второй <em>за 50%</em></h1>
+    <p class="hero-sub">Духовные артефакты со всего мира</p>
+    <a href="#" class="hero-cta">Смотреть Браслеты</a>
+  </div>
+</div>
+
+<!-- BESTSELLERS -->
+<section>
+  <div class="section-header">
+    <h2 class="section-title">Бестселлеры</h2>
+    <a href="#" class="view-all">Смотреть все</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/TibetanBracelet_4_1.jpg?v=1758449120&width=600" alt="Тибетский браслет удачи">
+        <span class="sale-badge">Скидка</span>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Тибетский Браслет Удачи</div>
+        <div class="product-price">
+          <span class="price-sale">1 720 ₽</span>
+          <span class="price-original">3 960 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/products/DSC_4187_046c2cdd-9a99-4453-81f2-6970b892c3a0.png?v=1678872168&width=600" alt="Мала Лазурит Третий Глаз">
+        <span class="sale-badge">Скидка</span>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Мала Лазурит «Третий Глаз»</div>
+        <div class="product-price">
+          <span class="price-sale">2 680 ₽</span>
+          <span class="price-original">5 960 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/11.jpg?v=1753161393&width=600" alt="Браслет активации мозговых волн">
+        <span class="sale-badge">Скидка</span>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Браслет Активации Мозговых Волн</div>
+        <div class="product-price">
+          <span class="price-sale">1 650 ₽</span>
+          <span class="price-original">3 000 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/5_1.jpg?v=1754895664&width=600" alt="Мала Цитрин финансового благополучия">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Мала Цитрин Финансового Благополучия</div>
+        <div class="product-price">
+          <span class="price-regular">4 140 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/products/DSC_8313_brightened.webp?v=1677583171&width=600" alt="Браслет лазурит Древо жизни">
+        <span class="sale-badge">Скидка</span>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Браслет Лазурит «Древо Жизни»</div>
+        <div class="product-price">
+          <span class="price-sale">1 485 ₽</span>
+          <span class="price-original">1 980 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/Hero_Landscape_7.jpg?v=1755016696&width=600" alt="Пирамида Цитрин для манифестации">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Пирамида Цитрин для Манифестации</div>
+        <div class="product-price">
+          <span class="price-regular">2 328 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/Untitled_1000_x_1000_px.jpg?v=1755023465&width=600" alt="Оргонитовая пирамида третьего глаза">
+        <span class="sale-badge">Скидка</span>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Оргонитовая Пирамида «Третий Глаз»</div>
+        <div class="product-price">
+          <span class="price-sale">1 485 ₽</span>
+          <span class="price-original">1 980 ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://karmaitems.com/cdn/shop/files/product-image-1870851906_1080x_726cb597-9ded-4838-ba02-f8398ab3bc32.jpg?v=1733634801&width=600" alt="Ожерелье 7 сокровищ баланс чакр">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Ожерелье «7 Сокровищ» — Баланс Чакр</div>
+        <div class="product-price">
+          <span class="price-regular">1 980 ₽</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="ornament-divider">✦ ✦ ✦</div>
+
+<!-- COLLECTIONS -->
+<section>
+  <div class="section-header">
+    <h2 class="section-title">Лучшие Коллекции</h2>
+  </div>
+  <div class="collections-grid">
+    <a href="#" class="collection-card">
+      <span class="collection-icon">📿</span>
+      Малы
+    </a>
+    <a href="#" class="collection-card">
+      <span class="collection-icon">🔮</span>
+      Подвески
+    </a>
+    <a href="#" class="collection-card">
+      <span class="collection-icon">⚡</span>
+      Браслеты
+    </a>
+    <a href="#" class="collection-card">
+      <span class="collection-icon">🏺</span>
+      Духовные Артефакты
+    </a>
+    <a href="#" class="collection-card">
+      <span class="collection-icon">⭐</span>
+      Бестселлеры
+    </a>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<div style="padding: 0 40px 80px; max-width:1480px; margin: 0 auto;">
+  <div class="subscribe-section">
+    <h3>Подпишитесь и Сэкономьте</h3>
+    <p>Эксклюзивные предложения и скидки для подписчиков нашей рассылки</p>
+    <div class="subscribe-form">
+      <input type="email" placeholder="Ваш email адрес">
+      <button type="button">Подписаться</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Karma Items</div>
+      <p class="footer-desc">Откройте для себя подлинные тибетские артефакты, несущие в себе мудрость веков. Наша коллекция помогает создать стабильность, изобилие и позитивные перемены в жизни.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Информация</h4>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Поиск</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Связаться с нами</a></li>
+        <li><a href="#">Все товары</a></li>
+        <li><a href="#">Портал возвратов</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Политики</h4>
+      <ul>
+        <li><a href="#">Политика конфиденциальности</a></li>
+        <li><a href="#">Условия использования</a></li>
+        <li><a href="#">Политика доставки</a></li>
+        <li><a href="#">Возврат и возмещение</a></li>
+        <li><a href="#">Политика оплаты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Связь с нами</h4>
+      <p class="footer-contact">
+        Есть вопросы? Мы всегда рады помочь:<br><br>
+        Email: <a href="mailto:support@karmaitems.com">support@karmaitems.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Karma Items | Все права защищены.</p>
+    <div class="payment-icons">
+      <span class="payment-icon">Visa</span>
+      <span class="payment-icon">Mastercard</span>
+      <span class="payment-icon">PayPal</span>
+      <span class="payment-icon">Apple Pay</span>
+      <span class="payment-icon">Google Pay</span>
+      <span class="payment-icon">Amex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
